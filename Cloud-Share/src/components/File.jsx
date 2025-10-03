@@ -46,14 +46,14 @@ const File = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center h-screen text-white animate-gradient bg-cover bg-center">
-      <div className="text-4xl mt-10 font-bold"> Welcome to Cloud Share</div>
-      <div className="text-xl">
+    <div className="flex flex-col items-center [@media(max-width:400px)]:h-[700px] h-screen text-white animate-gradient bg-cover bg-center overflow-hidden">
+      <div className="text-4xl [@media(max-width:400px)]:text-xl mt-10 [@media(max-width:400px)]:mt-5 font-bold"> Welcome to Cloud Share</div>
+      <div className="text-xl [@media(max-width:400px)]:text-md [@media(max-width:400px)]:text-center">
         {" "}
         Your one-stop solution for cloud file sharing.
       </div>
-      <div className="mt-5">
-        <div className="bg-white/50 p-5 mt-20 rounded-lg shadow-lg w-100 h-100 border-5 border-dotted border-gray-300">
+      <div className="mt-5 [@media(max-width:400px)]:mt-0">
+        <div className="bg-white/50 p-5 mt-20 [@media(max-width:400px)]:mt-10 [@media(max-width:400px)]:w-[270px] [@media(max-width:400px)]:h-[400px] rounded-lg shadow-lg w-100 h-100 border-5 border-dotted border-gray-300">
           <div className="text-center text-3xl text-black">
             Your file is Ready
           </div>

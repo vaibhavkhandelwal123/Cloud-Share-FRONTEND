@@ -63,23 +63,23 @@ const App = () => {
     <div className="min-h-screen bg-[url('/bg.jpg')] bg-cover bg-center overflow-hidden">
       {/* Header */}
       <div className="flex justify-center bg-gradient-to-l from-blue-600 to-green-300 p-5">
-        <h1 className="text-4xl font-bold text-white">
+        <h1 className="text-4xl [@media(max-width:400px)]:text-xl font-bold text-white">
           Welcome to Cloud Share
         </h1>
       </div>
 
       {/* Main Section */}
-      <div className="flex flex-row justify-evenly">
-        <div className="w-1/3 p-5 animate-gradient h-[80vh] mt-10 rounded-lg shadow-lg">
-          <div className="text-2xl text-center font-semibold mb-4">
+      <div className="flex flex-row [@media(max-width:400px)]:flex-col-reverse justify-evenly">
+        <div className="w-1/3 [@media(max-width:400px)]:h-[470px] [@media(max-width:400px)]:mb-5  [@media(max-width:400px)]:w-[90%] [@media(max-width:400px)]:m-auto p-5 [@media(max-width:400px)]:p-2 animate-gradient h-[80vh] mt-10 [@media(max-width:400px)]:mt-5 rounded-lg shadow-lg">
+          <div className="text-2xl text-center text-white font-semibold mb-4">
             Let's get started!
           </div>
-          <div className="">
+          <div className="flex flex-col items-center">
             <DotLottieReact
               src="https://lottie.host/d0f2bec7-14cf-4ca7-903b-e8e2c4339098/1V8ABDe0ex.lottie"
               loop
               autoplay
-              className="w-140 -ml-12 h-70"
+              className="w-140 [@media(max-width:400px)]:w-70 h-70 [@media(max-width:400px)]:h-40"
             />
           </div>
           <div className="mt-5">
@@ -111,7 +111,7 @@ const App = () => {
           files === "" ? (
             <div
               onClick={handleClick}
-              className="w-1/3 p-5 shadow-2xl mt-32 border-4 flex flex-col justify-center items-center border-dotted border-gray-400 h-96 rounded-lg bg-white/50 cursor-pointer hover:bg-white/70 transition"
+              className="w-1/3 [@media(max-width:400px)]:w-[90%] [@media(max-width:400px)]:m-auto [@media(max-width:400px)]:mt-5 [@media(max-width:400px)]:h-60 p-5 shadow-2xl mt-32 border-4 flex flex-col justify-center items-center border-dotted border-gray-400 h-96 rounded-lg bg-white/50 cursor-pointer hover:bg-white/70 transition"
             >
               <DotLottieReact
                 src="https://lottie.host/5ad74bef-1cc1-4185-9b38-2cd84dd841fd/cKzS2gtcYp.lottie"
@@ -132,8 +132,8 @@ const App = () => {
               </p>
             </div>
           ) : (
-            <div className="w-1/3 p-5 gap-10 shadow-2xl mt-32 border-4 flex flex-col justify-center items-center border-dotted border-gray-400 h-96 rounded-lg bg-white/50 cursor-pointer hover:bg-white/70 transition">
-              <FileText size={120} />
+            <div className="w-1/3 [@media(max-width:400px)]:w-[90%] [@media(max-width:400px)]:m-auto [@media(max-width:400px)]:mt-5  p-5 [@media(max-width:400px)]:p-1 gap-10 [@media(max-width:400px)]:gap-5 shadow-2xl mt-32 border-4 flex flex-col justify-center items-center border-dotted border-gray-400 h-96 rounded-lg bg-white/50 cursor-pointer hover:bg-white/70 transition">
+              <FileText size={120} className="[@media(max-width:400px)]:size-30" />
               <div className="font-bold  text-center">
                 <span>{name}</span>{" "}
                 <span
@@ -150,9 +150,9 @@ const App = () => {
             </div>
           )
         ) : (
-          <div className="w-1/3 py-5 gap-5 flex flex-col mt-80 justify-center items-center h-35 rounded-lg bg-white/70 cursor-pointer transition">
-            <div className="font-bold text-center text-2xl">
-              Link is Here ..Click to copy
+          <div className="w-1/3 [@media(max-width:400px)]:w-[90%] [@media(max-width:400px)]:m-auto [@media(max-width:400px)]:mt-5 py-5 gap-5 flex flex-col mt-80 justify-center items-center h-35 rounded-lg bg-white/70 cursor-pointer transition">
+            <div className="font-bold text-center [@media(max-width:400px)]:mt-5 text-2xl">
+              Link is accessible for 1 Hour ..Click to copy 
             </div>
             <div
               onClick={() => {
