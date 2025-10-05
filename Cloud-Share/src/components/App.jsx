@@ -15,6 +15,7 @@ const App = () => {
   const [link, setLink] = useState("");
   const [submit, setSubmit] = useState(false);
   const [base64, setBase64] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleClick = () => {
     fileInputRef.current?.click();
@@ -31,12 +32,15 @@ const App = () => {
     }
   };
   const handleSubmit = () => {
+    setLoading(true);
     if (files.length === 0) {
       toast.error("Please select files to upload.");
+      setLoading(false);
       return;
     }
     if (senderEmail === "" || receiverEmail === "") {
       toast.error("Please enter both sender and receiver email.");
+      setLoading(false);
       return;
     }
     let form = {
@@ -58,6 +62,7 @@ const App = () => {
           toast.error("Error uploading file. Please try again");
         });
     }, 2000);
+    setLoading(false);
   };
 
   const handlereset = () => {
@@ -108,16 +113,20 @@ const App = () => {
               placeholder="Enter receiver email"
               className="w-full text-white p-3 mb-4 border-3 placeholder:text-white border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button
+            {!loading ? (<button
               onClick={handleSubmit}
               className="w-full mt-5 shadow-2xl bg-blue-500 text-white p-3 font-semibold rounded-lg hover:bg-blue-700 transition"
             >
               Finish It and Access it
-            </button>
+            </button>):(
+              <button className="w-full mt-5 shadow-2xl bg-blue-500 text-white p-3 font-semibold rounded-lg hover:bg-blue-700 transition" disabled>
+                Generating Link...
+              </button>
+            )}
             {submit && (
-              <div className="text-black font-semibold text-md text-center mt-3">
+              <div className="text-gray-50 font-semibold text-md text-center mt-3">
                 Want to share another file?{" "}
-                <span className="text-underline cursor-pointer" onClick={handlereset}>
+                <span className="hover:underline cursor-pointer" onClick={handlereset}>
                   {" "}
                   Click me{" "}
                 </span>

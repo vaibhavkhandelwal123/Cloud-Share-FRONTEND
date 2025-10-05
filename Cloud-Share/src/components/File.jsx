@@ -94,7 +94,7 @@ const File = () => {
 
                 <div className="text-black text-md font-semibold text-center mt-3">
                   Want to share file?{" "}
-                  <span className="text-underline cursor-pointer" onClick={handlereset}>
+                  <span className="hover:underline cursor-pointer" onClick={handlereset}>
                     {" "}
                     Click me{" "}
                   </span>
