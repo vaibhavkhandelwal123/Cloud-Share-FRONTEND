@@ -115,8 +115,12 @@ const App = () => {
               Finish It and Access it
             </button>
             {submit && (
-              <div className="text-green-600 font-bold text-center mt-3">
-                Want to share another file? <span className="text-underline" onClick={handlereset}> Click me </span>
+              <div className="text-black font-semibold text-md text-center mt-3">
+                Want to share another file?{" "}
+                <span className="text-underline cursor-pointer" onClick={handlereset}>
+                  {" "}
+                  Click me{" "}
+                </span>
               </div>
             )}
           </div>
