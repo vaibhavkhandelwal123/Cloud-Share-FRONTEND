@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Download, Frown } from "lucide-react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { getFile } from "./service";
 import { base64ToFile } from "./Util";
@@ -11,7 +11,7 @@ const File = () => {
   const [file, setFile] = useState(null);
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
-
+cosnt navigate = useNavigate();
   useEffect(() => {
     setLoading(true);
     getFile(id)
@@ -45,6 +45,11 @@ const File = () => {
       alert("No file to download.");
     }
   };
+  const handlereset = () => {
+    toast.success("You can share file now.");
+    navigate("/");
+    window.location.reload();
+  }
   return (
     <div className="flex flex-col items-center [@media(max-width:400px)]:h-[700px] h-screen text-white animate-gradient bg-cover bg-center overflow-hidden">
       <div className="text-4xl [@media(max-width:400px)]:text-xl mt-10 [@media(max-width:400px)]:mt-5 font-bold"> Welcome to Cloud Share</div>
@@ -74,6 +79,7 @@ const File = () => {
           </div>
           <div className="flex flex-col items-center">
             {!loading && (
+              <>
               <button className="mt-5 bg-blue-600 text-white p-3 font-semibold rounded-lg w-full hover:bg-purple-700 transition duration-200 ease-in-out">
                 <span
                   className="flex items-center justify-center gap-2"
@@ -82,6 +88,11 @@ const File = () => {
                   <Download /> Download File
                 </span>
               </button>
+               
+              <div className="text-green-600 font-bold text-center mt-3">
+                Want to share file? <span className="text-underline" onClick={handlereset}> Click me </span>
+              </div>
+            </>
             )}
           </div>
         </div>

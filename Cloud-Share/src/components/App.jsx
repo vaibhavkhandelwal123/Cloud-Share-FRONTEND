@@ -59,6 +59,17 @@ const App = () => {
         });
     }, 2000);
   };
+
+  const handlereset = () => {
+    setSubmit(false);
+    setFiles("");
+    setName("");
+    setLink("");
+    setSenderEmail("");
+    setReceiverEmail("");
+    setBase64("");
+    toast.success("Reset successful! You can share another file.");
+  }
   return (
     <div className="min-h-screen bg-[url('/bg.jpg')] bg-cover bg-center overflow-hidden">
       {/* Header */}
@@ -103,6 +114,11 @@ const App = () => {
             >
               Finish It and Access it
             </button>
+            {submit && (
+              <div className="text-green-600 font-bold text-center mt-3">
+                Want to share another file? <span className="text-underline" onClick={handlereset}> Click me </span>
+              </div>
+            )}
           </div>
         </div>
 
