@@ -57,12 +57,13 @@ const App = () => {
           setLink(`${window.location.href}getit/${res.request.responseText}`);
           setSubmit(true);
           toast.success("Files uploaded successfully!");
+          setLoading(false);
         })
         .catch((err) => {
           toast.error("Error uploading file. Please try again");
+          setLoading(false);
         });
     }, 2000);
-    setLoading(false);
   };
 
   const handlereset = () => {
@@ -119,9 +120,9 @@ const App = () => {
             >
               Finish It and Access it
             </button>):(
-              <button className="w-full mt-5 shadow-2xl bg-blue-500 text-white p-3 font-semibold rounded-lg hover:bg-blue-700 transition">
+              <p className="text-center text-white font-semibold mt-3">
                 Generating Link...
-              </button>
+              </p>
             )}
             {submit && (
               <div className="text-gray-50 font-semibold text-md text-center mt-3">
