@@ -87,7 +87,7 @@ const App = () => {
 
       {/* Main Section */}
       <div className="flex flex-row [@media(max-width:400px)]:flex-col-reverse justify-evenly">
-        <div className="w-1/3 [@media(max-width:400px)]:h-[470px] [@media(max-width:400px)]:mb-5  [@media(max-width:400px)]:w-[90%] [@media(max-width:400px)]:m-auto p-5 [@media(max-width:400px)]:p-2 animate-gradient h-[80vh] mt-10 [@media(max-width:400px)]:mt-5 rounded-lg shadow-lg">
+        <div className="w-1/3 [@media(max-width:400px)]:h-[480px] [@media(max-width:400px)]:mb-5  [@media(max-width:400px)]:w-[90%] [@media(max-width:400px)]:m-auto p-5 [@media(max-width:400px)]:p-2 animate-gradient h-[80vh] mt-10 [@media(max-width:400px)]:mt-10 rounded-lg shadow-lg">
           <div className="text-2xl text-center text-white font-semibold mb-4">
             Let's get started!
           </div>
