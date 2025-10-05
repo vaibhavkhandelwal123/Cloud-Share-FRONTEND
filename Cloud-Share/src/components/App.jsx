@@ -119,7 +119,7 @@ const App = () => {
             >
               Finish It and Access it
             </button>):(
-              <button className="w-full mt-5 shadow-2xl bg-blue-500 text-white p-3 font-semibold rounded-lg hover:bg-blue-700 transition" disabled>
+              <button className="w-full mt-5 shadow-2xl bg-blue-500 text-white p-3 font-semibold rounded-lg hover:bg-blue-700 transition">
                 Generating Link...
               </button>
             )}
