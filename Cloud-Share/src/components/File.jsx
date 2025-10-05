@@ -61,7 +61,7 @@ const File = () => {
         Your one-stop solution for cloud file sharing.
       </div>
       <div className="mt-5 [@media(max-width:400px)]:mt-0">
-        <div className="bg-white/50 p-5 mt-20 [@media(max-width:400px)]:mt-10 [@media(max-width:400px)]:w-[270px] [@media(max-width:400px)]:h-[400px] rounded-lg shadow-lg w-100 h-100 border-5 border-dotted border-gray-300">
+        <div className="bg-white/50 p-5 mt-20 [@media(max-width:400px)]:mt-10 [@media(max-width:400px)]:w-[270px] [@media(max-width:400px)]:h-[430px] rounded-lg shadow-lg w-100 h-120 border-5 border-dotted border-gray-300">
           <div className="text-center text-3xl text-black">
             Your file is Ready
           </div>
@@ -92,7 +92,7 @@ const File = () => {
                   </span>
                 </button>
 
-                <div className="text-green-600 font-bold text-center mt-3">
+                <div className="text-black text-md font-semibold text-center mt-3">
                   Want to share file?{" "}
                   <span className="text-underline" onClick={handlereset}>
                     {" "}
